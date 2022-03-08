@@ -10,7 +10,7 @@ void main() {
 class MyApp extends StatelessWidget {
   final CurrencyRoute _myRoute = CurrencyRoute();
   MyApp({Key? key}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return AdaptiveTheme(
