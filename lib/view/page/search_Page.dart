@@ -34,9 +34,10 @@ class _SearchPage extends State<SearchPage> {
                   if (text.isEmpty) {
                     _temp.clear();
                     setState(() {});
-                  } else if (curren.title.toString().toLowerCase().contains(
-                        text.toString(),
-                      )) {
+                  } else if (curren.title
+                      .toString()
+                      .toLowerCase()
+                      .contains(text.toString())) {
                     _temp.add(curren);
                     setState(() {});
                   }
@@ -44,30 +45,20 @@ class _SearchPage extends State<SearchPage> {
               },
             ),
           ),
-          _controller.text.isNotEmpty
-              ? Expanded(
-                  flex: 15,
-                  child: ListView.builder(
-                    itemCount: _temp.length,
-                    itemBuilder: (_, __) {
-                      return Currencsies(
-                          img: FlagData.flagList[__],
-                          cb_price: _temp[__].cbPrice.toString(),
-                          date: _temp[__].date.toString().substring(1, 8),
-                          code: _temp[__].code.toString(),
-                          title: _temp[__].title.toString());
-                    },
-                  ),
-                )
-              : const Expanded(
-                  flex: 15,
-                  child: Center(
-                    child: Mytext(
-                      text: '<---->',
-                      fontWeight: FontWeightConst.w3,
-                    ),
-                  ),
-                ),
+          _controller.text.isNotEmpty ?
+          Expanded(
+            flex: 15,
+            child: ListView.builder(
+                itemCount: _temp.length,
+                itemBuilder: (_, __) {
+                  return Currencsies(
+                      img: FlagData.flagList[__],
+                      cb_price: _temp[__].cbPrice.toString(),
+                      date: _temp[__].date.toString().substring(1, 8),
+                      code: _temp[__].code.toString(),
+                      title: _temp[__].title.toString());
+                }),
+          ): const Expanded(flex: 15,child: Center(child: Mytext(text: 'SEARCH ANYTHING', fontWeight: FontWeightConst.w3,),))
         ],
       ),
     );

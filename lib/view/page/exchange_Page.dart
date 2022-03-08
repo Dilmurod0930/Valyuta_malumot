@@ -82,7 +82,18 @@ class _ExchangePageState extends State<ExchangePage> {
                 fontWeight: FontWeightConst.bold,
                 size: FontSizeConst.Large,
               ),
-             
+              const Spacer(),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.7),
+                child: FloatingActionButton(
+                  elevation: 0,
+                    backgroundColor: Colors.teal,
+                    child: IconConst.logo,
+                    onPressed: () {
+                      setState(() {});
+                    }),
+              ),
             ],
           ),
         )
